@@ -1,5 +1,19 @@
-calculator {
-    max-width: 300px;
+body{
+
+    background-color: black;
+    color: rgb(0, 0, 0);
+}
+
+.calculator {
+
+    position: absolute;
+    
+    left: 27rem;
+    top:70px;
+    
+    background-color: aliceblue;
+    width: 340px;
+    height: px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -15,18 +29,33 @@ calculator {
     top:70px;
     font-size: 2rem;
     
-  }
+}
+.mybutton{
+
+
+    background-color: black;
+    color: aliceblue;
+
+
+}
 .buttons {
 
+   
     position: absolute;
     
     left: 25rem;
     top:10rem;
+  
     
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
     
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    
     cursor: pointer;
 };
+
+
