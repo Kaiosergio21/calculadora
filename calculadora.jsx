@@ -1,4 +1,5 @@
 import React, { Fragment,useState} from 'react';
+import { evaluate } from 'mathjs';
 
 
 
@@ -11,23 +12,21 @@ function calculadora(){
 
 setInput((prevInput) => prevInput + value);
   
-};/*função que  junta o input anterior com o  valor atual */
+};/*funÃ§Ã£o que  junta o input anterior com o  valor atual */
 
         
 
-   const calculate = ()=>{
+   
+const calculate = () => {/*usar evaluate */
+  try {/*calculo*/
+    const result = evaluate(input);/*evaluate no imput apertado no botÃ£o*/
+    setInput(result.toString());/*coloca resultado na string */
+  } catch (error) {
+    setInput('ERROR');
+  }
+};
 
-    try{
-
-        setInput(eval(input).toString());/*usar eval(input).toString() para identificar os sinais e executar os calculos*/
-
-    }catch(error){
-
-        setInput('ERROR');
-
-    }
-
-   };
+ 
 
    const clearAll = () =>{
 
@@ -36,7 +35,7 @@ setInput((prevInput) => prevInput + value);
 
    const clear = () =>{
 
-setInput((prevInput) => prevInput.slice(0,-1));/* slice(0,-1) é usado para remover o ultimo caracter da string*/
+setInput((prevInput) => prevInput.slice(0,-1));/* slice(0,-1) Ã© usado para remover o ultimo caracter da string*/
 
    };
    
@@ -53,27 +52,27 @@ return(
 <div className='input'>{input}</div>
 <div className='buttons'>
 
-<button onClick={() =>buttonhandler('1')}>1</button>
-<button onClick={() =>buttonhandler('2')}>2</button>
-<button onClick={() =>buttonhandler('3')}>3</button>
-<button onClick={() =>buttonhandler('4')}>4</button>
-<button onClick={() =>buttonhandler('5')}>5</button>
-<button onClick={() =>buttonhandler('6')}>6</button>
-<button onClick={() =>buttonhandler('7')}>7</button>
-<button onClick={() =>buttonhandler('8')}>8</button>
-<button onClick={() =>buttonhandler('9')}>9</button>
-<button onClick={() =>buttonhandler('0')}>0</button>
+<button className='mybutton' onClick={() =>buttonhandler('1')}>1</button>
+<button className='mybutton' onClick={() =>buttonhandler('2')}>2</button>
+<button className='mybutton' onClick={() =>buttonhandler('3')}>3</button>
+<button className='mybutton' onClick={() =>buttonhandler('4')}>4</button>
+<button className='mybutton' onClick={() =>buttonhandler('5')}>5</button>
+<button className='mybutton' onClick={() =>buttonhandler('6')}>6</button>
+<button className='mybutton' onClick={() =>buttonhandler('7')}>7</button>
+<button className='mybutton' onClick={() =>buttonhandler('8')}>8</button>
+<button className='mybutton' onClick={() =>buttonhandler('9')}>9</button>
+<button className='mybutton' onClick={() =>buttonhandler('0')}>0</button>
 
-<button onClick={() =>buttonhandler('+')}>+</button>
-<button onClick={() =>buttonhandler('-')}>+</button>
-<button onClick={() =>buttonhandler('*')}>x</button>
-<button onClick={() =>buttonhandler('/')}>/</button>
+<button className='mybutton' onClick={() =>buttonhandler('+')}>+</button>
+<button className='mybutton' onClick={() =>buttonhandler('-')}>-</button>
+<button className='mybutton' onClick={() =>buttonhandler('*')}>x</button>
+<button className='mybutton' onClick={() =>buttonhandler('/')}>/</button>
 
-<button onClick={calculate}>=</button>
+<button className='mybutton' onClick={calculate}>=</button>
 
-<button onClick={clearAll}>C</button>
+<button className='mybutton' onClick={clearAll}>C</button>
 
-<button onClick={clear}>delete</button>
+<button className='mybutton' onClick={clear}>delete</button>
 
 
 </div>
