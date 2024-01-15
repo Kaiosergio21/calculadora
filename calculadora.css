@@ -8,11 +8,11 @@ body{
 
     position: absolute;
     
-    left: 27rem;
+    left: 24rem;
     top:70px;
     
     background-color: aliceblue;
-    width: 340px;
+    width: 497px;
     height: px;
     margin: 0 auto;
     padding: 20px;
@@ -25,13 +25,14 @@ body{
 
     position: absolute;
     
-    left: 37rem;
+    left: 41rem;
     top:70px;
     font-size: 2rem;
     
 }
 .mybutton{
 
+  
 
     background-color: black;
     color: aliceblue;
@@ -43,10 +44,10 @@ body{
    
     position: absolute;
     
-    left: 25rem;
+    left: 21rem;
     top:10rem;
   
-    
+    font-size: 27px;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
