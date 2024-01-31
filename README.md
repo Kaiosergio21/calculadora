@@ -1,4 +1,11 @@
-# calculadora
+# descrição do projeto 
+
+uma calculadora simples programada em react.js
+
+
+
+
+# como debugar o projeto
 
 1- abrir terminal
 
